@@ -34,11 +34,12 @@ const VerticalMenu = () => {
               href={item.href}
 
               sx={{
-
                 color: router === item.href ? "var(--darkc)" : "#ffffff",
                 backgroundColor: router === item.href ? "#ffffff" : "transparent",
-                borderStartStartRadius: router === item.href ? "20px" : "none",
-                borderEndStartRadius: router === item.href ? "20px" : "none",
+                borderStartStartRadius: router === item.href ? "40px" : "none",
+                borderEndStartRadius: router === item.href ? "40px" : "none",
+                paddingTop: "20px",
+                paddingBottom: "20px",
                 "&::after": router === item.href ? {
                   content: '""',
                   position: 'absolute',
