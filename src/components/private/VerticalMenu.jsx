@@ -37,8 +37,8 @@ const VerticalMenu = () => {
 
                 color: router === item.href ? "var(--darkc)" : "#ffffff",
                 backgroundColor: router === item.href ? "#ffffff" : "transparent",
-                borderStartStartRadius: router === item.href ? "20px" : "none",
-                borderEndStartRadius: router === item.href ? "20px" : "none",
+                borderStartStartRadius: router === item.href ? "30px" : "none",
+                borderEndStartRadius: router === item.href ? "30px" : "none",
                 "&::after": router === item.href ? {
                   content: '""',
                   position: 'absolute',
@@ -49,6 +49,8 @@ const VerticalMenu = () => {
                   backgroundSize: "100% 100%",
                   top: "-20px",
                   right: 0,
+                  paddingTop: "20px",
+                  paddingBottom: "20px",
                   // transform: "translateY(-20px)"
                 }
                   :
