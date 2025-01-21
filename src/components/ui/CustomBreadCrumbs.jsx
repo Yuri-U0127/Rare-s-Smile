@@ -19,7 +19,7 @@ const CustomBreadCrumbs = ({ label, url, hierarchy }) => {
       underline="hover"
       key="2"
       color="inherit"
-      href={url}
+      to={url}
     >
       {label}
     </Link>,

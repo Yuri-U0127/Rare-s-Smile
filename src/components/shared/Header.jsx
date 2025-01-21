@@ -1,7 +1,7 @@
 'use client'
 
 // React Imports
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 import Hamburger from '../ui/header/Hamburger'
 import CustomButton from '../ui/CustomButton'
@@ -24,7 +24,13 @@ export default function PublicHeader() {
   const [open, setOpen] = useState(false)
 
   // Refs
+
   const anchorRef = useRef(null)
+  const currentUrl = useRef('')
+
+  useEffect(() => {
+    currentUrl.current = window.location.href;
+  }, []);
 
   // Hooks
   // const router = useRouter()
@@ -45,8 +51,6 @@ export default function PublicHeader() {
 
     setOpen(false)
   }
-  // Get the current URL
-  const currentUrl = window.location.href;
 
   return (
     <>
@@ -122,7 +126,7 @@ export default function PublicHeader() {
             </Hamburger>
           </div>
         </div>
-        {currentUrl.search("portal") > 1 ?
+        {currentUrl.current.search("portal") > 1 ?
           < div className='flex absolute bottom-[-20px] left-[15%]'>
             <div className="mx-[16px]">
               <CustomButton text="新規登録  ＋" width={"200px"} height={"55px"} fontsize={"20px"} />

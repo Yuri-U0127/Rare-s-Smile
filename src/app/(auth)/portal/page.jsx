@@ -123,7 +123,7 @@ const PortalPage = () => {
           </div>
           <div>
             <Grid container className='justify-center'>
-              {carditems.map((item, index) => <Grid item md={4} xs={12}>
+              {carditems.map((item, index) => <Grid item md={4} xs={12} key={index}>
                 <CustomCard2
                   imgSrc={item.imgSrc}
                   cardTitle={item.cardTitle}

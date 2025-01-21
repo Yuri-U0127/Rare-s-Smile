@@ -12,7 +12,7 @@ const navItems = [
   { label: "メモ", href: "/memo", whiteIcon: <img src="/images/white_memo.svg" />, greenIcon: <img src="/images/green_memo.svg" /> },
   { label: "医療費記録", href: "/pricelog", whiteIcon: <img src="/images/white_calc.svg" />, greenIcon: <img src="/images/green_calc.svg" /> },
   { label: "データの広場", href: "/data_area", whiteIcon: <img src="/images/white_expansion.svg" />, greenIcon: <img src="/images/green_expansion.svg" /> },
-  { label: "FAQ", href: "/faq", whiteIcon: <img src="/images/white_help.svg" />, greenIcon: <img src="/images/green_help.svg" /> },
+  { label: "FAQ", href: "/faq", whiteIcon: <img src="/images/white_help.svg" />, greenIcon: <img src="/images/green_Help.svg" /> },
   { label: "プライバシー", href: "/privacy", whiteIcon: <img src="/images/white_polish.svg" />, greenIcon: <img src="/images/green_polish.svg" /> },
   { label: "利用規約", href: "/polish", whiteIcon: <img src="/images/white_book.svg" />, greenIcon: <img src="/images/green_book.svg" /> },
 ];
