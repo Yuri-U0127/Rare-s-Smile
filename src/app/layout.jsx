@@ -2,7 +2,6 @@
 
 import './globals.css'
 import dynamic from "next/dynamic";
-import { Noto_Sans_JP } from 'next/font/google';
 const PublicHeader = dynamic(() => import('../components/shared/Header'));
 const PublicFooter = dynamic(() => import('../components/shared/Footer'))
 const PrivateHeader = dynamic(() => import('../components/private/Header'));
@@ -10,8 +9,6 @@ const PrivateFooter = dynamic(() => import('../components/private/Footer'));
 const VerticalMenu = dynamic(() => import('../components/private/VerticalMenu'));
 import { Box, Grid } from '@mui/material';
 const PortalPage = dynamic(() => import('./(routes)/portal/page'));
-
-const notoSansJP = Noto_Sans_JP({ subsets: ['japanese'] })
 
 export const metadata = {
   title: 'Next.js App',
