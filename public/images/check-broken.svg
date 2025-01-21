@@ -1,0 +1,7 @@
+<svg id="check-broken" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="check-broken_Frame_Background_" data-name="check-broken [Frame Background]" width="24" height="24" fill="none"/>
+  <g id="check-broken-2" data-name="check-broken">
+    <rect id="check-broken_Frame_Background_2" data-name="check-broken [Frame Background]" width="24" height="24" fill="none"/>
+    <path id="Icon" d="M18,9A8.994,8.994,0,1,1,12.938.9M6.188,9l2.25,2.25,7.875-7.875" transform="translate(3 3)" fill="none" stroke="#5a5a5a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

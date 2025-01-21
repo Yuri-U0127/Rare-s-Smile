@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="306" height="362" viewBox="0 0 306 362">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.885" y1="1" x2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eae5c9" stop-opacity="0.678"/>
+      <stop offset="1" stop-color="#6cc6cb" stop-opacity="0.678"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(-423 -81)">
+    <rect id="Rectangle_43" data-name="Rectangle 43" width="306" height="362" rx="10" transform="translate(423 81)" fill="#fefefe"/>
+    <g id="frame">
+      <path id="Vector_1" data-name="Vector 1" d="M0,0H28V28" transform="translate(684 99)" fill="none" stroke="#e9e9e9" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+      <path id="Vector_2" data-name="Vector 2" d="M0,0H28V28" transform="translate(468 427) rotate(-180)" fill="none" stroke="#e9e9e9" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+    </g>
+    <g id="camera" transform="translate(506.5 180)">
+      <g id="Ellipse_3" data-name="Ellipse 3" stroke="rgba(255,255,255,0.62)" stroke-width="6" fill="url(#linear-gradient)">
+        <circle cx="67" cy="67" r="67" stroke="none"/>
+        <circle cx="67" cy="67" r="64" fill="none"/>
+      </g>
+      <g id="camera-01" transform="translate(28.5 28)">
+        <rect id="camera-01_Frame_Background_" data-name="camera-01 [Frame Background]" width="78" height="78" fill="none"/>
+        <g id="camera-01-2" data-name="camera-01">
+          <rect id="camera-01_Frame_Background_2" data-name="camera-01 [Frame Background]" width="78" height="78" fill="none"/>
+          <path id="Icon" d="M0,49.14V17.16a7.8,7.8,0,0,1,7.8-7.8h7.8L21.06,0H41.34L46.8,9.36h7.8a7.8,7.8,0,0,1,7.8,7.8V49.14a7.8,7.8,0,0,1-7.8,7.8H7.8A7.8,7.8,0,0,1,0,49.14Z" transform="translate(7.8 10.53)" fill="none" stroke="#fff" stroke-width="5"/>
+          <path id="Icon-2" data-name="Icon" d="M42.9,31.2A11.7,11.7,0,1,1,31.2,19.5,11.7,11.7,0,0,1,42.9,31.2Z" transform="translate(7.8 10.53)" fill="none" stroke="#fff" stroke-width="5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

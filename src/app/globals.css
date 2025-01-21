@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url('/fonts/MPLUSRounded1c-Regular.ttf');
+}
+
+/* html {
+  font-size: clamp(10px, 0.694vw, 4px);
+} */
+
+nextjs-portal {
+  display: none;
+}
+
+body {
+  padding: 0 !important;
+  overflow: auto !important;
+}
+
+
+:root {
+  --foreground: #5A5A5A;
+  --darkc: #22998D;
+  --lightc: #D4F2EF;
+  --darkpinkc: #E54D9E;
+  --lightpinkc: #F9D7E9;
+  --darkgradient: linear-gradient(180deg, #75D1C1, #0D9890);
+  --lightgradient: linear-gradient(180deg, #C9E1DD, #15CBC0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #5A5A5A;
+    --darkc: #22998D;
+    --lightc: #D4F2EF;
+    --darkpinkc: #E54D9E;
+    --c: #F9D7E9;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "M PLUS Rounded 1c" !important;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "M PLUS Rounded 1c" !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  color: var(--foreground);
+  font-family: "M PLUS Rounded 1c";
+}

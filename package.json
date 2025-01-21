@@ -1,0 +1,37 @@
+{
+  "name": "skeleton",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/m-plus-rounded-1c": "^5.1.1",
+    "@mui/icons-material": "^6.3.1",
+    "@mui/joy": "^5.0.0-beta.51",
+    "@mui/material": "^6.3.1",
+    "@mui/x-charts": "^7.23.6",
+    "@mui/x-date-pickers": "^7.23.6",
+    "apexcharts": "^4.3.0",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "next": "^15.1.4",
+    "react": "^19.0.0",
+    "react-apexcharts": "^1.7.0",
+    "react-datepicker": "^7.6.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "22.10.5",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
