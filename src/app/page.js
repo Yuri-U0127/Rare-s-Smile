@@ -13,14 +13,11 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MobileHeader from "../components/shared/MobileHeader.jsx";
 import MobileFooter from "../components/private/MobileFooter.jsx";
+import ScrollToTopButton from '../components/ui/global/ScrollToTopButton'
 
 const PrivateHeader = dynamic(() => import('../components/private/Header'));
 const PrivateFooter = dynamic(() => import('../components/private/Footer'));
 const VerticalMenu = dynamic(() => import('../components/private/VerticalMenu'));
-
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import theme1 from "../components/ui/global/theme.js";
 
 export default function HomePage() {
 
@@ -47,10 +44,9 @@ export default function HomePage() {
     { title: "期限が切れています", isRead: false },
   ]
 
-
-
   return (
     <div className="relative">{!matches && <MobileHeader />}
+      <ScrollToTopButton />
       {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
       <div className='flex'>
         {/* {!matches && <div style={{ backgroundImage: "url('/images/sp-banner-header.png')", position: "absolute", top: 0, zIndex: "-3", width: "100vw" }} ></div>} */}
@@ -206,16 +202,16 @@ export default function HomePage() {
                   flexWrap: 'nowrap',    // Prevent wrapping to a new line
                   // overflowX: 'auto',     // Enable horizontal scrolling
                 }} >
-                  <Grid item md={3} xs={5}>
+                  <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
                     <CustomGreenCard imgSrc="/images/green_circle_memo.svg" title="メモ" desc="次の受診日予定などのメモを取っておくと便利です。" />
                   </Grid>
-                  <Grid item md={3} xs={5}>
+                  <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
                     <CustomGreenCard imgSrc="/images/green_circle_folder.svg" title="情報整理" desc="日々の医療情報を電子管理しましょう。" />
                   </Grid>
-                  <Grid item md={3} xs={5}>
+                  <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
                     <CustomGreenCard imgSrc="/images/green_circle_graph.svg" title="上限管理表" desc="紛失時などを想定して、定期的に更新登録しましょう。" />
                   </Grid>
-                  <Grid item md={3} xs={5}>
+                  <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
                     <CustomGreenCard imgSrc="/images/green_circle_search.svg" title="血液等検査結果" desc="通院時の血液検査結果などを保管しておきましょう。" />
                   </Grid>
                 </Grid>
