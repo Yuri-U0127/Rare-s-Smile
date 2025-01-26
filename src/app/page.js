@@ -12,12 +12,15 @@ import dynamic from "next/dynamic";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MobileHeader from "../components/shared/MobileHeader.jsx";
-import Image from "next/image";
+import MobileFooter from "../components/private/MobileFooter.jsx";
 
 const PrivateHeader = dynamic(() => import('../components/private/Header'));
 const PrivateFooter = dynamic(() => import('../components/private/Footer'));
 const VerticalMenu = dynamic(() => import('../components/private/VerticalMenu'));
 
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme1 from "../components/ui/global/theme.js";
 
 export default function HomePage() {
 
@@ -160,7 +163,7 @@ export default function HomePage() {
                     <div className="flex">
                       {/* <Grid> */}
                       {cardItems.map((item, index) => (
-                        <CustomBox shadowColor={"#D4F2EF"} borderRadius={"20px"} key={index} margin={"10px"}>
+                        <CustomBox shadowColor={"#D4F2EF"} borderRadius={"20px"} key={index} margin={"10px"} minWidth="150px">
                           <div className="font-bold mb-3">{item.title}</div>
                           <div className="mx-auto"><img src={item.imgSrc} alt="" /></div>
                         </CustomBox>
@@ -198,17 +201,21 @@ export default function HomePage() {
                   </Grid>
                 </Grid>
                 <br />
-                <Grid container rowGap={2} spacing={2}>
-                  <Grid item md={3}>
+                <Grid container rowGap={2} spacing={2} sx={{
+                  // display: 'flex',       // Use flexbox
+                  flexWrap: 'nowrap',    // Prevent wrapping to a new line
+                  // overflowX: 'auto',     // Enable horizontal scrolling
+                }} >
+                  <Grid item md={3} xs={5}>
                     <CustomGreenCard imgSrc="/images/green_circle_memo.svg" title="メモ" desc="次の受診日予定などのメモを取っておくと便利です。" />
                   </Grid>
-                  <Grid item md={3}>
+                  <Grid item md={3} xs={5}>
                     <CustomGreenCard imgSrc="/images/green_circle_folder.svg" title="情報整理" desc="日々の医療情報を電子管理しましょう。" />
                   </Grid>
-                  <Grid item md={3}>
+                  <Grid item md={3} xs={5}>
                     <CustomGreenCard imgSrc="/images/green_circle_graph.svg" title="上限管理表" desc="紛失時などを想定して、定期的に更新登録しましょう。" />
                   </Grid>
-                  <Grid item md={3}>
+                  <Grid item md={3} xs={5}>
                     <CustomGreenCard imgSrc="/images/green_circle_search.svg" title="血液等検査結果" desc="通院時の血液検査結果などを保管しておきましょう。" />
                   </Grid>
                 </Grid>
@@ -216,14 +223,18 @@ export default function HomePage() {
             </Box>
 
             {/* Footer */}
-            <Box
-              sx={{
-                backgroundColor: '#f5f5f5',
-                padding: 2,
-              }}
-            >
-              <PrivateFooter />
-            </Box>
+            {matches ?
+              <Box
+                sx={{
+                  backgroundColor: '#f5f5f5',
+                  padding: 2,
+                }}
+              >
+                <PrivateFooter />
+              </Box>
+              :
+              <MobileFooter />
+            }
           </Grid>
         </Grid>
       </div>

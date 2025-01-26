@@ -10,6 +10,10 @@ const VerticalMenu = dynamic(() => import('../components/private/VerticalMenu'))
 import { Box, Grid } from '@mui/material';
 const PortalPage = dynamic(() => import('./(auth)/portal/page'));
 
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+// import theme from '../theme';
+
 export const metadata = {
   title: 'Next.js App',
   description: 'Modern Next.js application',
