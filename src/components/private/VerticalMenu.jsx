@@ -34,6 +34,8 @@ const VerticalMenu = () => {
               href={item.href}
 
               sx={{
+                paddingTop: "20px",
+                paddingBottom: "20px",
 
                 color: router === item.href ? "var(--darkc)" : "#ffffff",
                 backgroundColor: router === item.href ? "#ffffff" : "transparent",
@@ -49,8 +51,6 @@ const VerticalMenu = () => {
                   backgroundSize: "100% 100%",
                   top: "-20px",
                   right: 0,
-                  paddingTop: "20px",
-                  paddingBottom: "20px",
                   // transform: "translateY(-20px)"
                 }
                   :

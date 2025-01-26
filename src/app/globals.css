@@ -11,9 +11,9 @@
   font-size: clamp(10px, 0.694vw, 4px);
 } */
 
-nextjs-portal {
+/* nextjs-portal {
   display: none;
-}
+} */
 
 body {
   padding: 0 !important;
