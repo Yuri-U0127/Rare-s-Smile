@@ -47,8 +47,10 @@ export default function HomePage() {
 
 
   return (
-    <>{!matches && <MobileHeader />}
+    <div className="relative">{!matches && <MobileHeader />}
+      {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
       <div className='flex'>
+        {/* {!matches && <div style={{ backgroundImage: "url('/images/sp-banner-header.png')", position: "absolute", top: 0, zIndex: "-3", width: "100vw" }} ></div>} */}
         <Grid container sx={{ minHeight: '100vh' }}>
           {/* Vertical Menu */}
           {matches && <Grid
@@ -70,6 +72,8 @@ export default function HomePage() {
             sx={{
               display: 'flex',
               flexDirection: 'column',
+              width: "inherit",
+              maxWidth: "100%",
             }}
           >
             {/* Header */}
@@ -224,6 +228,6 @@ export default function HomePage() {
         </Grid>
       </div>
 
-    </>
+    </div>
   )
 }

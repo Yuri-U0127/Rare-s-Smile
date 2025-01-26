@@ -10,7 +10,7 @@ const VerticalMenu = dynamic(() => import('../../components/private/VerticalMenu
 const layout = ({ children }) => {
   return (
     <html lang="jp" /* style={{ fontFamily: notoSansJP.className }} */>
-      <body className="flex is-full min-bs-full flex-auto flex-col max-w-[1440px] mx-auto w-full bg-white">
+      <body className="flex is-full min-bs-full flex-auto flex-col bg-white">
         <div className='flex'>
           <Grid container sx={{ minHeight: '100vh' }}>
             {/* Vertical Menu */}

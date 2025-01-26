@@ -25,7 +25,8 @@ const MobileHeader = () => {
 
 
   return (
-    <>
+    <div className="absolute top-0 w-full">
+
       <AppBar
         position="static"
         sx={{
@@ -139,7 +140,7 @@ const MobileHeader = () => {
 
         </List >
       </Drawer >
-    </>
+    </div>
   );
 };
 

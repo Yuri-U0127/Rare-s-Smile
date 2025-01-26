@@ -45,6 +45,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "M PLUS Rounded 1c" !important;
+  /* max-width: 1440px; */
+  width: 100vw;
 }
 
 * {
@@ -64,4 +66,15 @@ p,
 li {
   color: var(--foreground);
   font-family: "M PLUS Rounded 1c";
+}
+
+@media screen and (min-width: 780px) {
+  body {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+}
+
+html {
+  margin: 0;
 }

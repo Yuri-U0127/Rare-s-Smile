@@ -20,7 +20,7 @@ const token = true;
 export default function RootLayout({ children }) {
   return (
     <html lang="jp" /* style={{ fontFamily: notoSansJP.className }} */>
-      <body className="flex is-full min-bs-full flex-auto flex-col max-w-[1440px] mx-auto w-full bg-white">
+      <body className="flex is-full min-bs-full flex-auto flex-col w-full bg-white">
         {children}
       </body>
     </html>
