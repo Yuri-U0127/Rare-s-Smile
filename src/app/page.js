@@ -14,6 +14,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import MobileHeader from "../components/shared/MobileHeader.jsx";
 import MobileFooter from "../components/private/MobileFooter.jsx";
 import ScrollToTopButton from '../components/ui/global/ScrollToTopButton'
+import Agenda from "../components/ui/Agenda.jsx";
 
 const PrivateHeader = dynamic(() => import('../components/private/Header'));
 const PrivateFooter = dynamic(() => import('../components/private/Footer'));
@@ -126,18 +127,8 @@ export default function HomePage() {
                   </Grid>
                   <Grid item xs={12} md={7}>
                     <CustomBox shadowColor="#ddd" borderRadius={"10px"}>
-                      <div className="flex">
-                        <div className="max-h-[325px] w-[150px] ">
-                          <div className="h-[50px] border-b-2 border-[white] bg-[#22998D] rounded-t-[10px] text-white">
-                            <div className="w-fit mx-auto">累計開始日</div>
-                            <div className="w-fit mx-auto"><span className="font-bold">2021.03.05</span></div>
-                          </div>
-                          <div className="bg-[#D4F2EF] rounded-b-[10px]">
-                            <div className="w-fit mx-auto pt-10">累計金額</div>
-                            <div className="w-fit mx-auto"><span className="text-sm">(目安)</span></div>
-                            <div className="w-fit mx-auto pb-10 text-[#22998D]"><span className="text-3xl">12,460</span>円</div>
-                          </div>
-                        </div>
+                      {matches ? <div className="flex">
+                        <Agenda matches={matches} />
                         <div className="text-center">
                           <div className="flex justify-center">
                             <img src="/images/management_table.svg"></img>
@@ -150,12 +141,26 @@ export default function HomePage() {
                         </div>
 
                       </div>
+                        : <div>
+                          <Agenda matches={matches} />
+                          <div className="text-center" style={{ transform: "translate-x:-30px" }} >
+                            <div className="flex justify-center ">
+                              <img src="/images/management_table.svg"></img>
+                              <span>上限額</span>
+                            </div>
+                            <div className="flex" >
+                              <CustomRadialChart title={"軽症高額"} label={"2 / 3回"} progress={74} />
+                              <CustomRadialChart title={"高額長期"} label={"3 / 6回"} progress={50} />
+                            </div>
+                          </div>
+                        </div>
+                      }
                     </CustomBox>
                   </Grid>
                 </Grid>
                 <br />
-                <Grid container spacing={2}>
-                  <Grid item container md={8} xs={12} sx={{ alignItems: "flex-start" }}>
+                <Grid container spacing={2} >
+                  <Grid item container md={8} xs={12} sx={{ alignItems: "flex-start", overflow: "scroll", scrollbarWidth: "none" }}>
                     <div className="flex">
                       {/* <Grid> */}
                       {cardItems.map((item, index) => (
@@ -201,6 +206,7 @@ export default function HomePage() {
                   // display: 'flex',       // Use flexbox
                   flexWrap: 'nowrap',    // Prevent wrapping to a new line
                   // overflowX: 'auto',     // Enable horizontal scrolling
+                  overflow: "scroll"
                 }} >
                   <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
                     <CustomGreenCard imgSrc="/images/green_circle_memo.svg" title="メモ" desc="次の受診日予定などのメモを取っておくと便利です。" />
