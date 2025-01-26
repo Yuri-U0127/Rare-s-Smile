@@ -38,7 +38,7 @@ const MobileHeader = () => {
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton edge="start">
             <img
-              src="/logo.png" // Replace with your logo path
+              src="/images/logo_small.svg"
               alt="Logo"
               style={{ width: 40, height: 40 }}
             />
@@ -69,36 +69,75 @@ const MobileHeader = () => {
       </AppBar>
       <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
         {/* Drawer Header */}
-        <CustomMobileMenuDivider />
-        <Divider />
         <List sx={{ width: 250 }}>
-
-          <ListItem button>
-
+          <ListItem button sx={{ cursor: "pointer" }}>
             <ListItemText>
               <CustomMobileMenuList title="ホーム" imgSrc='/images/home.svg' link="/" />
-              <CustomMobileMenuList title="保険証" imgSrc='/images/Insurance_certificate.svg' link="/" />
-              <CustomMobileMenuList title="受給者証" imgSrc='/images/Insurance_certificate.svg' link="/" />
-              <CustomMobileMenuList title="マイナカード" imgSrc='/images/my_number_card.svg' link="/" />
-              <CustomMobileMenuList title="臨床調査個人票" imgSrc='/images/individual_form.svg' link="/" />
-              <CustomMobileMenuDivider />
-              <CustomMobileMenuList title="ホーム" imgSrc='/images/home.svg' link="/" />
-              <CustomMobileMenuList title="医療情報" imgSrc='/images/medical_info.svg' link="/pricelog" />
-              <CustomMobileMenuList title="上限管理表" imgSrc='/images/management_table.svg' link="/" />
-              <CustomMobileMenuList title="健康診断" imgSrc='/images/search.svg' link="/" />
-              <CustomMobileMenuDivider />
-              <CustomMobileMenuList title="プロフィール" imgSrc='/images/recipitence.svg' link="/profile" />
-              <CustomMobileMenuList title="データの広場" imgSrc='/images/expansion.svg' link="/data_area" />
-              <CustomMobileMenuList title="ヘルプ" imgSrc='/images/help.svg' link="/" />
-              <CustomMobileMenuDivider />
-              <CustomMobileMenuList title="FAQ" imgSrc='/images/help.svg' link="/faq" />
-              <CustomMobileMenuList title="プライバシーポリシー" imgSrc='/images/polish.svg' link="/privacy" />
-              <CustomMobileMenuList title="利用規約" imgSrc='/images/book.svg' link="/polish" />
-
-
             </ListItemText>
           </ListItem>
-        </List>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <CustomMobileMenuList title="保険証" imgSrc='/images/Insurance_certificate.svg' link="/certificate/ensurance" />
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <CustomMobileMenuList title="受給者証" imgSrc='/images/Insurance_certificate.svg' link="/certificate/recipient" />
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <CustomMobileMenuList title="マイナカード" imgSrc='/images/my_number_card.svg' link="/" />
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <CustomMobileMenuList title="臨床調査個人票" imgSrc='/images/individual_form.svg' link="/certificate/individual" />
+          </ListItem>
+          <CustomMobileMenuDivider />
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <CustomMobileMenuList title="メモ" imgSrc='/images/memo.svg' link="/memo" />
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <CustomMobileMenuList title="医療情報" imgSrc='/images/medical_info.svg' link="/pricelog/information" />
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <CustomMobileMenuList title="上限管理表" imgSrc='/images/management_table.svg' link="/management_table" />
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <ListItemText>
+              <CustomMobileMenuList title="健康診断" imgSrc='/images/search.svg' link="/pricelog/check" />
+            </ListItemText>
+          </ListItem>
+          <CustomMobileMenuDivider />
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <ListItemText>
+              <CustomMobileMenuList title="プロフィール" imgSrc='/images/recipitence.svg' link="/profile" />
+            </ListItemText>
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <ListItemText>
+              <CustomMobileMenuList title="データの広場" imgSrc='/images/expansion.svg' link="/data_area" />
+            </ListItemText>
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <ListItemText>
+              <CustomMobileMenuList title="ヘルプ" imgSrc='/images/help.svg' link="/help" />
+            </ListItemText>
+          </ListItem>
+
+          <CustomMobileMenuDivider />
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <ListItemText>
+              <CustomMobileMenuList title="FAQ" imgSrc='/images/help.svg' link="/faq" />
+            </ListItemText>
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <ListItemText>
+              <CustomMobileMenuList title="プライバシーポリシー" imgSrc='/images/polish.svg' link="/privacy" />
+            </ListItemText>
+          </ListItem>
+          <ListItem button sx={{ cursor: "pointer" }}>
+            <ListItemText>
+              <CustomMobileMenuList title="利用規約" imgSrc='/images/book.svg' link="/polish" />
+            </ListItemText>
+          </ListItem>
+
+
+        </List >
       </Drawer >
     </>
   );

@@ -9,6 +9,7 @@ const CustomMobileMenuDivider = () => {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '8px 16px',
+        backgroundColor: "#F9F9F9",
       }}
     >
     </Box>
