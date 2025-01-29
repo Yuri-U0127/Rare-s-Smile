@@ -20,6 +20,7 @@ const CustomColorSelect = ({ selectedValue }) => {
         boxShadow: "1px 1px 1px #ddd",
         borderRadius: "5px",
         flex: 1,
+        transform: "translateY(10px)",
         padding: "8px 12px",
         "& .MuiSelect-select": { padding: 0 },
         "& .MuiSelect-icon": { color: "#00B7D4" },

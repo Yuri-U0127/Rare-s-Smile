@@ -11,11 +11,18 @@ const CustomButton = dynamic(() => import('../../../components/ui/CustomButton.j
 const CustomEventSelect = dynamic(() => import('../../../components/ui/CustomEventSelect.jsx'));
 const MemoButton = dynamic(() => import("../../../components/ui/MemoButton.jsx"));
 const SocialInput = dynamic(() => import('../../../components/ui/SocialInput.jsx'));
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { Margin } from '@mui/icons-material';
+import { match } from 'assert';
+
 
 export default function Profile() {
 
   const [counts, setCounts] = useState([])
 
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
 
 
   return (
@@ -24,11 +31,12 @@ export default function Profile() {
       <Grid item md={6} xs={12}>
         <div className='pt-[50px]'>
           <div className="flex justify-between">
+            {!matches && <div className='text-lg scale-150 pt-2'>←</div>}
             <Typography variant="h4" component="h2" sx={{ color: "var(--darkc)", fontFamily: "M PLUS Rounded 1c" }}>
               プロフィール
             </Typography>
             <div className="flex">
-              <img src="/images/edit.svg" alt="" className="h-6" />
+              <img src="/images/edit.svg" alt="" className="h-6" style={{ margin: matches ? '0' : "inherit" }} />
               編集する
             </div>
           </div>
@@ -142,7 +150,7 @@ export default function Profile() {
           <CustomInput
             imgSrc="/images/medical_info.svg"
             inputLab="日常使用している薬剤"
-            customWidth="440px"
+            // customWidth="440px"
             extraButton
             btnLabel="追加"
             btnIcon="/images/add.svg"
@@ -158,7 +166,7 @@ export default function Profile() {
               <CustomColorSelect selectedValue="pink" />
               <CustomEventSelect selectedValue="others" />
               <div className="inline-block ml-2">
-                <div className="flex gap-2">
+                <div className="flex gap-2" style={{ marginBottom: !matches ? "10px" : "", marginLeft: !matches ? "40px" : "", marginTop: !matches ? "10px" : "" }}>
                   <MemoButton text="登録" width={"80px"} height={"40px"} fontsize={"16px"} subIcon={"/images/white_create.svg"} padding={"0"} borderradius={"8px"} />
                   <MemoButton text="編集" width={"80px"} height={"40px"} fontsize={"16px"} subIcon={"/images/wrench.svg"} padding={"0"} borderradius={"8px"} isoutlined />
                 </div>
@@ -193,7 +201,7 @@ export default function Profile() {
           <img src={"/images/share.svg"} alt="" />
           SNSアカウント
         </div>
-        <div style={{ transform: "translateX(-87px)" }} >
+        <div style={{ transform: matches ? "translateX(-87px)" : "" }} >
           <SocialInput icon="/images/X.svg" />
           <SocialInput icon="/images/instag.svg" />
           <SocialInput icon="/images/face.svg" />

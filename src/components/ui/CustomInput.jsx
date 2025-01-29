@@ -23,7 +23,7 @@ export default function CustomInput({
   const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,]
 
   return (
-    <div className="flex flex-row items-center">
+    <div className="flex flex-row items-center w-full">
       <FormControl >
         <FormLabel sx={{ color: "inherit" }}>
           <div className="flex">
@@ -31,7 +31,7 @@ export default function CustomInput({
             {inputLab}
           </div>
         </FormLabel>
-        <Input placeholder={inputPlaceholder} sx={{ width: customWidth || "600px", padding: "24px", marginBottom: "16px" }} />
+        <Input placeholder={inputPlaceholder} sx={{ width: customWidth || "100%", padding: "24px", marginBottom: "16px" }} />
         {extraButton && (
           !isGroup ?
             <div className="flex absolute top-0 right-0 cursor-pointer">

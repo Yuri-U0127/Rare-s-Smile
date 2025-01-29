@@ -77,26 +77,40 @@ const MobileHeader = () => {
             </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
-            <CustomMobileMenuList title="保険証" imgSrc='/images/Insurance_certificate.svg' link="/certificate/ensurance" />
+            <ListItemText>
+              <CustomMobileMenuList title="保険証" imgSrc='/images/Insurance_certificate.svg' link="/certificate/ensurance" />
+            </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
-            <CustomMobileMenuList title="受給者証" imgSrc='/images/Insurance_certificate.svg' link="/certificate/recipient" />
+            <ListItemText>
+              <CustomMobileMenuList title="受給者証" imgSrc='/images/Insurance_certificate.svg' link="/certificate/recipient" />
+            </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
-            <CustomMobileMenuList title="マイナカード" imgSrc='/images/my_number_card.svg' link="/" />
+            <ListItemText>
+              <CustomMobileMenuList title="マイナカード" imgSrc='/images/my_number_card.svg' link="/" />
+            </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
-            <CustomMobileMenuList title="臨床調査個人票" imgSrc='/images/individual_form.svg' link="/certificate/individual" />
+            <ListItemText>
+              <CustomMobileMenuList title="臨床調査個人票" imgSrc='/images/individual_form.svg' link="/certificate/individual" />
+            </ListItemText>
           </ListItem>
           <CustomMobileMenuDivider />
           <ListItem button sx={{ cursor: "pointer" }}>
-            <CustomMobileMenuList title="メモ" imgSrc='/images/memo.svg' link="/memo" />
+            <ListItemText>
+              <CustomMobileMenuList title="メモ" imgSrc='/images/memo.svg' link="/memo" />
+            </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
-            <CustomMobileMenuList title="医療情報" imgSrc='/images/medical_info.svg' link="/pricelog/information" />
+            <ListItemText>
+              <CustomMobileMenuList title="医療情報" imgSrc='/images/medical_info.svg' link="/pricelog/information" />
+            </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
-            <CustomMobileMenuList title="上限管理表" imgSrc='/images/management_table.svg' link="/management_table" />
+            <ListItemText>
+              <CustomMobileMenuList title="上限管理表" imgSrc='/images/management_table.svg' link="/management_table" />
+            </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
             <ListItemText>

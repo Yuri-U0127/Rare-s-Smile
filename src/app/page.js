@@ -47,7 +47,7 @@ export default function HomePage() {
 
   return (
     <div className="relative">{!matches && <MobileHeader />}
-      <ScrollToTopButton />
+      {!matches && <ScrollToTopButton />}
       {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
       <div className='flex'>
         {/* {!matches && <div style={{ backgroundImage: "url('/images/sp-banner-header.png')", position: "absolute", top: 0, zIndex: "-3", width: "100vw" }} ></div>} */}
@@ -206,7 +206,8 @@ export default function HomePage() {
                   // display: 'flex',       // Use flexbox
                   flexWrap: 'nowrap',    // Prevent wrapping to a new line
                   // overflowX: 'auto',     // Enable horizontal scrolling
-                  overflow: "scroll"
+                  overflow: "scroll",
+                  scrollbarWidth: "none",
                 }} >
                   <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
                     <CustomGreenCard imgSrc="/images/green_circle_memo.svg" title="メモ" desc="次の受診日予定などのメモを取っておくと便利です。" />
