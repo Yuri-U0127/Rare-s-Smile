@@ -18,6 +18,7 @@ const CutomList = dynamic(() => import("../../../components/ui/CustomList.jsx"))
 const MemoButton = dynamic(() => import('../../../components/ui/MemoButton'));
 const SimpleButton = dynamic(() => import("../../../components/ui/SimpleButton.jsx"));
 const PageTitle = dynamic(() => import('../../../components/ui/PageTitle'));
+import { useRouter, useSearchParams } from "next/navigation";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -58,10 +59,12 @@ const recentMemo = [
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
 
+  const router = useRouter();
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    // router.push(!newValue ? "memo/textmemo" : "memo/voicememo")
   };
-
 
   return (
     <>

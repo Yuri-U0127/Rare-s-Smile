@@ -15,7 +15,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Margin } from '@mui/icons-material';
 import { match } from 'assert';
-
+import GoBackButton from "../../../components/ui/global/GoBackButton.jsx";
 
 export default function Profile() {
 
@@ -31,7 +31,7 @@ export default function Profile() {
       <Grid item md={6} xs={12}>
         <div className='pt-[50px]'>
           <div className="flex justify-between">
-            {!matches && <div className='text-lg scale-150 pt-2'>←</div>}
+            {!matches && <GoBackButton link="/" />}
             <Typography variant="h4" component="h2" sx={{ color: "var(--darkc)", fontFamily: "M PLUS Rounded 1c" }}>
               プロフィール
             </Typography>

@@ -9,7 +9,7 @@ import {
   ListItem,
   ListItemText,
   Box,
-  Divider
+  Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
