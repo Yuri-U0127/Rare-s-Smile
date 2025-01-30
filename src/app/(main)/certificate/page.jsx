@@ -19,6 +19,11 @@ const CustomPanel = dynamic(() => import('../../../components/ui/CustomPanel'));
 const EmptyField = dynamic(() => import('../../../components/ui/EmptyField'));
 const CustomButton = dynamic(() => import("../../../components/ui/CustomButton.jsx"));
 const PageTitle = dynamic(() => import('../../../components/ui/PageTitle'));
+import CustomBreadCrumbs from "../../../components/ui/CustomBreadCrumbs.jsx";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import CustomCarousel from "../../../components/ui/CustomCarousel.jsx";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,23 +55,66 @@ function a11yProps(index) {
   };
 }
 
-const tabs = [
+const pctabs = [
   { tabLabel: "受給者証", icon: "/images/recipitence.svg" },
   { tabLabel: "保険証", icon: "/images/insurance_certificate.svg" },
   { tabLabel: "マイナカード", icon: "/images/my_number_card.svg" },
   { tabLabel: "臨床調査個人票", icon: "/images/title.svg" },
 ]
+const sptabs = [
+  { tabLabel: "受給者証", icon: "/images/recipitence.svg" },
+  { tabLabel: "保険証", icon: "/images/insurance_certificate.svg" },
+  { tabLabel: "マイナ", icon: "/images/my_number_card.svg" },
+  { tabLabel: "個人票", icon: "/images/title.svg" },
+]
 
 export default function BasicTabs() {
+
+  const [carouselIndex, setCarouselIndex] = React.useState(0);
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+
+
+  const router = usePathname();
+  let tempValue
+  console.log(router.search("ensurance"))
+
+  if (router.search("ensurance") > 0) { useRouter().push("/certificate"); tempValue = 1; }
+  // else if (router.search("recipient") > 0) tempValue = 2;
+  // else if (router.search("recipient") > 0) tempValue = 3;
+
+  console.log(tempValue)
   const [value, setValue] = React.useState(0);
+
+  console.log(router)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  let currentLabel = "受給者証登録"
+  switch (value) {
+    case 0:
+      currentLabel = "受給者証登録"
+      break;
+    case 1:
+      currentLabel = "保険証"
+      break;
+    case 2:
+      currentLabel = "マイナカード"
+      break;
+    case 3:
+      currentLabel = "臨床調査個人票"
+      break;
+    default:
+      currentLabel = "受給者証登録"
+      break;
+  }
 
   return (
     <>
+      {matches && <CustomBreadCrumbs hierarchy={2} label1={"証明書"} url={""} label={currentLabel} />}
       <div className='mr-0 mt-5'>
         <div className='flex justify-end gap-[271px]'>
           <PageTitle title={"証明書登録"} />
@@ -81,14 +129,34 @@ export default function BasicTabs() {
               '& .MuiTabs-indicator': {
                 height: '4px',
                 backgroundColor: 'var(--darkc)',
+                width: {
+                  sm: '30%',
+                  md: '100%'
+                },
+                // position: { sm: "absolute", md: 'inherit' },
+                // left: { sm: '50%', md: '' },
+                // bottom: { sm: '', md: '4px' },
+                // transform: { sm: 'translateX(50%)', md: 'translateX(0)' },1
               },
-            }} aria-label="basic tabs example">
-              {tabs.map((item, index) =>
-                <Tab label={<div className="flex gap-2 items-center p-0 text-[#aaa]" key={index}>
+            }
+            } aria-label="basic tabs example">
+              {matches ? pctabs.map((item, index) => (
+                <Tab key={index} label={<div className="flex gap-2 items-center p-0 text-[#aaa]">
                   <img src={item.icon} alt="" />
                   {item.tabLabel}
-                </div>} {...a11yProps(index)} />
-              )}
+                </div>} {...a11yProps(index)} />))
+                :
+                (sptabs.map((item, index) =>
+                  <Tab
+                    key={index}
+                    label={
+                      <div className="flex justify-center flex-col items-center p-0 text-[#aaa]">
+                        <img src={item.icon} alt="" />
+                        {item.tabLabel}
+                      </div>}
+                    {...a11yProps(index)}
+                  />
+                ))}
             </Tabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
@@ -102,7 +170,7 @@ export default function BasicTabs() {
                         position: relative;
                         background-color:#F1F8F6;
                         width:682px;
-                        height:98px;
+
                         padding-left:32px;
                         padding-top:18px;
                         margin-left:23.2px;
@@ -115,7 +183,7 @@ export default function BasicTabs() {
                         height: 0;
                         position: absolute;
                         top: 37%;
-                        left: -1.5%;
+
                         width: 0;
                         z-index: 1;
                         border: medium solid white;
@@ -126,16 +194,21 @@ export default function BasicTabs() {
                   </div>
                 </div>
                 <Grid container >
-                  <Grid item xs={12} md={4.5}>
-                    <CustomPanel title={"表面"}>
-                      <EmptyField />
-                    </CustomPanel>
-                  </Grid>
-                  <Grid item xs={12} md={4.5}>
-                    <CustomPanel title={"表面"}>
-                      <EmptyField />
-                    </CustomPanel>
-                  </Grid>
+                  {matches ?
+                    <><Grid item xs={12} md={4.5}>
+                      <CustomPanel title={"表面"}>
+                        <EmptyField />
+                      </CustomPanel>
+                    </Grid>
+                      <Grid item xs={12} md={4.5}>
+                        <CustomPanel title={"表面"}>
+                          <EmptyField />
+                        </CustomPanel>
+                      </Grid>
+                    </>
+                    :
+                    <CustomCarousel number={3} carouselIndex={carouselIndex} setCarouselIndex={setCarouselIndex} />
+                  }
                   <Grid item xs={12} md={3}>
                     <div className='mt-10'>
                       <div className="flex gap-2 items-center p-0 text-[#aaa] justify-end mr-6">
@@ -164,9 +237,11 @@ export default function BasicTabs() {
                             content="薬があまり効かないので次回報告すること。"
                           />
                         </div>
-                        <div className="ml-2">
-                          <img src="/images/next.svg" alt="" className="cursor-pointer pt-5" width={30} height={30} />
-                        </div>
+                        {matches &&
+                          <div className="ml-2">
+                            <img src="/images/next.svg" alt="" className="cursor-pointer pt-5" width={30} height={30} />
+                          </div>
+                        }
                       </div>
                       <CustomButton
                         text="登録 +"
@@ -174,7 +249,7 @@ export default function BasicTabs() {
                         height={"64px"}
                         borderradius={"150px"}
                         display={"block"}
-                        sx={{ marginInline: "5px 0px", marginTop: "50px", marginButtom: "40px" }}
+                        sx={{ marginInline: { md: "5px 0px", sm: "auto" }, marginTop: "50px", marginButtom: "40px" }}
                       />
                     </div>
                   </Grid>
@@ -183,7 +258,13 @@ export default function BasicTabs() {
             </div>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-            123
+            1
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={2}>
+            2
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={3}>
+            3
           </CustomTabPanel>
         </Box>
       </div >

@@ -73,8 +73,27 @@ li {
     max-width: 1440px;
     margin-inline: auto;
   }
+
+  .bubble {
+    height: 96px;
+  }
+
+  .bubble::before {
+    left: -1.5%;
+  }
 }
 
 html {
   margin: 0;
+}
+
+@media screen and (max-width: 780px) {
+  .bubble {
+    height: fit-content;
+    padding-bottom: 10px;
+  }
+
+  .bubble::before {
+    left: -3%;
+  }
 }

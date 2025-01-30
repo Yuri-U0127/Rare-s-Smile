@@ -23,6 +23,7 @@ const CustomPanel = dynamic(() => import('../../../components/ui/CustomPanel'));
 const EmptyField = dynamic(() => import('../../../components/ui/EmptyField'));
 const CustomButton = dynamic(() => import("../../../components/ui/CustomButton.jsx"));
 const ModalButton = dynamic(() => import("../../../components/ui/ModalButton"));
+import CustomBreadCrumbs from "../../../components/ui/CustomBreadCrumbs.jsx";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -63,14 +64,39 @@ const tabs = [
 ]
 
 export default function BasicTabs() {
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  let currentLabel = "領収書"
+  switch (value) {
+    case 0:
+      currentLabel = "領収書"
+      break;
+    case 1:
+      currentLabel = "処方箋"
+      break;
+    case 2:
+      currentLabel = "上限管理表"
+      break;
+    case 3:
+      currentLabel = "健康診断結果"
+      break;
+    case 4:
+      currentLabel = "血液検査"
+      break;
+    default:
+      currentLabel = "領収書"
+      break;
+  }
+
+
   return (
     <>
+      <CustomBreadCrumbs hierarchy={2} label1={"医療費記録"} url={""} label={currentLabel} />
       <div className='mr-0 mt-5'>
         <div className='flex justify-end gap-[271px]'>
           <PageTitle title={"医療費記録"} />

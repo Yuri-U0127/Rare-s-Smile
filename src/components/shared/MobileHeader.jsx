@@ -88,7 +88,7 @@ const MobileHeader = () => {
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
             <ListItemText>
-              <CustomMobileMenuList title="マイナカード" imgSrc='/images/my_number_card.svg' link="/" />
+              <CustomMobileMenuList title="マイナカード" imgSrc='/images/my_number_card.svg' link="/certificate/mynum" />
             </ListItemText>
           </ListItem>
           <ListItem button sx={{ cursor: "pointer" }}>
@@ -150,8 +150,6 @@ const MobileHeader = () => {
               <CustomMobileMenuList title="利用規約" imgSrc='/images/book.svg' link="/polish" />
             </ListItemText>
           </ListItem>
-
-
         </List >
       </Drawer >
     </div>

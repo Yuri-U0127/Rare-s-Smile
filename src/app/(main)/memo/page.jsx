@@ -18,7 +18,8 @@ const CutomList = dynamic(() => import("../../../components/ui/CustomList.jsx"))
 const MemoButton = dynamic(() => import('../../../components/ui/MemoButton'));
 const SimpleButton = dynamic(() => import("../../../components/ui/SimpleButton.jsx"));
 const PageTitle = dynamic(() => import('../../../components/ui/PageTitle'));
-import { useRouter, useSearchParams } from "next/navigation";
+import CustomBreadCrumbs from "../../../components/ui/CustomBreadCrumbs.jsx";
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -59,15 +60,29 @@ const recentMemo = [
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
 
-  const router = useRouter();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
     // router.push(!newValue ? "memo/textmemo" : "memo/voicememo")
   };
 
+  let currentLabel = "メモ帳"
+  switch (value) {
+    case 0:
+      currentLabel = "メモ帳"
+      break;
+    case 1:
+      currentLabel = "ボイスメモ"
+      break;
+    default:
+      currentLabel = "メモ帳"
+      break;
+  }
+
+
   return (
     <>
+      <CustomBreadCrumbs hierarchy={2} label1={"メモ"} url={""} label={currentLabel} />
       <PageTitle title={"メモ"} />
       <div className='mt-5'>
         <Box sx={{ width: '100%' }}>

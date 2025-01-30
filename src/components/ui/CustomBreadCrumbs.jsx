@@ -6,7 +6,8 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import { Typography } from "@mui/material";
 
-const CustomBreadCrumbs = ({ label, url, hierarchy }) => {
+
+const CustomBreadCrumbs = ({ label1, url, hierarchy, label }) => {
 
   const breadcrumbs = [
     <Link underline="hover" key="1" color="inherit" href="/">
@@ -46,7 +47,7 @@ const CustomBreadCrumbs = ({ label, url, hierarchy }) => {
           color="inherit"
           href={url}
         >
-          {label}
+          {label1}
         </Link>}
       <Typography key="3" sx={{ color: 'text.primary' }}>
         {label}
