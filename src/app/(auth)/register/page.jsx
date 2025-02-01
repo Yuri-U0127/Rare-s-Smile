@@ -9,10 +9,17 @@ import Checkbox from '@mui/joy/Checkbox';
 const CustomInput = dynamic(() => import('../../../components/ui/CustomInput.jsx'));
 const LoginButton = dynamic(() => import('../../../components/ui/LoginButton.jsx'));
 const ForStranger = dynamic(() => import('../../../components/ui/ForStranger.jsx'));
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 export default function RegisterPage() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+
   return (
     <>
+      {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
       <div className='shadow-xl w-[80%] mx-auto p-20 mt-[136px]  rounded-lg mb-[56px]'>
         <div className="flex text-center">
           <img src="/images/create_account.svg" className="mx-auto" />

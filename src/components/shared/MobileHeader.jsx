@@ -9,7 +9,6 @@ import {
   ListItem,
   ListItemText,
   Box,
-  Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -133,7 +132,6 @@ const MobileHeader = () => {
               <CustomMobileMenuList title="ヘルプ" imgSrc='/images/help.svg' link="/help" />
             </ListItemText>
           </ListItem>
-
           <CustomMobileMenuDivider />
           <ListItem button sx={{ cursor: "pointer" }}>
             <ListItemText>

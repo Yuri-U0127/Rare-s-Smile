@@ -9,15 +9,21 @@ import Checkbox from '@mui/joy/Checkbox';
 import LoginButton from '../../../components/ui/LoginButton.jsx'
 import ForStranger from '../../../components/ui/ForStranger.jsx'
 import ConfirmModal from '../../../components/ui/ConfirmModal.jsx'
-import Link from 'next/link.js';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 export default function LoginPage() {
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <>
+      {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
       <div className='shadow-xl w-[80%] mx-auto p-20 mt-[136px]  rounded-lg mb-[56px]'>
         <div className="flex text-center">
           <img src="/images/login.svg" className="mx-auto" />

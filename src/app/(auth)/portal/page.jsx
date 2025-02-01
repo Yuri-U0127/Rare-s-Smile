@@ -7,9 +7,14 @@ import { Box, Grid, Typography, Badge } from '@mui/material';
 const CustomCard = dynamic(() => import('../../../components/ui/CustomCard1'));
 const CustomButton = dynamic(() => import('../../../components/ui/CustomButton'));
 const CustomCard2 = dynamic(() => import('../../../components/ui/CustomCard2'));
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 const PortalPage = () => {
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   const carditems = [
     {
@@ -45,13 +50,13 @@ const PortalPage = () => {
   ]
 
   return (
-    <>
+    <>{!matches && <img src="/images/sp-banner.png" width="100%" />}
       <Box
         sx={{
-          backgroundColor: '#D8F4F4', // Light mint green
+          backgroundColor: '#D8F4F4',
           textAlign: 'center',
           padding: '8px 16px',
-          borderRadius: '8px 8px 0 0', // Rounded corners at the top
+          borderRadius: '8px 8px 0 0',
           position: 'relative',
           marginTop: '100px',
           '&::after': {
@@ -72,7 +77,7 @@ const PortalPage = () => {
         <Typography
           variant="h6"
           sx={{
-            color: '#008080', // Teal color for text
+            color: '#008080',
             fontWeight: 'bold',
             display: 'inline-flex',
             alignItems: 'center',
