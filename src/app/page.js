@@ -53,7 +53,7 @@ export default function HomePage() {
         {!matches &&
           <div className="flex items-center absolute top-[-6%]">
             <img src="/images/avatar-large.png" className="!inline ml-5" alt="" width={"70px"} height={"70px"} style={{ borderRadius: "50%" }} />
-            <span className="text-[#ddd] inline-block align-bottom ml-6">こんにちは、<br /><span className=" text-3xl">ユーザー様</span></span>
+            <span className="text-[#333] inline-block align-bottom ml-6">こんにちは、<br /><span className=" text-3xl">ユーザー様</span></span>
           </div>
         }
 

@@ -31,39 +31,14 @@ export default function CustomInput({
         </FormLabel>
         <Input placeholder={inputPlaceholder} sx={{ width: customWidth || "100%", padding: "24px", marginBottom: "16px" }} />
         {extraButton && (
-          !isGroup ?
-            <div className="flex absolute top-0 right-0 cursor-pointer">
-              <img src={btnIcon} alt="" />
-              {btnLabel}
-            </div>
-            :
-            <div className="flex absolute top-0 right-[-90px] cursor-pointer">
-              <img src={btnIcon} alt="" />
-              {btnLabel}
-            </div>
+
+          <div className="flex absolute top-0 right-0 cursor-pointer">
+            <img src={btnIcon} alt="" />
+            {btnLabel}
+          </div>
         )
         }
       </FormControl >
-      {isGroup &&
-        <Select
-          sx={{
-
-            border: 'none',
-            transform: inputLab ? "translate(-3px, 7px)" : "translate(-4px, -6px)",
-            backgroundColor: "white",
-            boxShadow: "1px 1px 3px #ddd",
-            height: "74.18px",
-            '& .MuiSelect-select': {
-              paddingRight: '8px',
-            },
-          }}
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={2025}
-        >
-          {years.map((item, index) => (<MenuItem key={index} value={item}>{item}年</MenuItem>))}
-        </Select>
-      }
     </div >
   )
 }

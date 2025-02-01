@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 const CustomInput = dynamic(() => import("../../../components/ui/CustomInput.jsx"));
+const CustomInputGroup = dynamic(() => import("../../../components/ui/CustomInputGroup.jsx"));
 const CustomOption = dynamic(() => import("../../../components/ui/CustomOption.jsx"));
 const CustomColorSelect = dynamic(() => import("../../../components/ui/CustomColorSelect.jsx"));
 const CustomButton = dynamic(() => import('../../../components/ui/CustomButton.jsx'));
@@ -14,6 +15,7 @@ const SocialInput = dynamic(() => import('../../../components/ui/SocialInput.jsx
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import GoBackButton from "../../../components/ui/global/GoBackButton.jsx";
+import { Box } from '@mui/material';
 
 export default function Profile() {
 
@@ -123,50 +125,61 @@ export default function Profile() {
           />
         </Grid>
         <Grid item md={6} xs={12}>
-          <div className='px-20'>
+          <Box
+            sx={{
+              px: {
+                xs: 0,
+                md: 8,
+              },
+            }}
+          >
             <CustomInput
               imgSrc={"/images/mail.svg"}
               // imgAlt={ }
               inputPlaceholder={"例) 123-4567"}
               inputLab={"郵便番号"}
-              customWidth={"400px"}
+
             />
-          </div>
+          </Box>
         </Grid>
       </Grid>
       <Grid container>
         <Grid item xs={12} md={8}>
-          <div className='flex'>
-            <CustomInput
-              imgSrc="/images/title.svg"
-              inputLab="疾患名"
-              isGroup
-              extraButton
-              btnLabel="確定診断年度"
-              btnIcon="/images/search.svg"
-            />
-          </div>
+          <CustomInputGroup
+            imgSrc="/images/title.svg"
+            inputLab="疾患名"
+            extraButton
+            btnLabel="確定診断年度"
+            btnIcon="/images/search.svg"
+            matches={matches}
+          />
           {counts.map((item, index) =>
             <div>
-              <CustomInput
+              <div className='min-h-2'></div>
+              <CustomInputGroup
                 key={index}
-                isGroup
+                matches={matches}
               />
 
             </div>
           )}
         </Grid>
-        <Grid item xs={12} md={4}>
-          <div>
-            <div onClick={() => setCounts([...counts, 1])} className="flex cursor-pointer" style={{ transform: `translate(-20px,${(counts.length + 1) * 70}px)` }}>
+        <Grid item xs={12} md={4} >
+          <div className='flex cursor-pointer'>
+            <div onClick={() => setCounts([...counts, 1])}
+              style={{
+                transform: `translate(20px,${(counts.length + 1) * 70 + (15 * counts.length)}px)`,
+                display: "flex",
+              }}
+            >
               <img src="/images/add.svg" alt="" />
-              追加
+              <div>追加</div>
             </div>
           </div>
         </Grid>
       </Grid>
 
-      <Grid container >
+      <Grid container sx={{ mt: 2 }}>
         <Grid item xs={12} md={6}>
           <CustomInput
             imgSrc="/images/medical_info.svg"
@@ -178,23 +191,31 @@ export default function Profile() {
           />
         </Grid>
         <Grid item xs={12} md={6}>
-          <div className="flex cursor-pointer">
-            <img src={"/images/memo.svg"} alt="" />
-            メモタグ設定
-          </div>
-          <div className="flex">
-            <div>
-              <CustomColorSelect selectedValue="pink" />
-              <CustomEventSelect selectedValue="others" />
-              <div className="inline-block ml-2">
-                <div className="flex gap-2" style={{ marginBottom: !matches ? "10px" : "", marginLeft: !matches ? "40px" : "", marginTop: !matches ? "10px" : "" }}>
-                  <MemoButton text="登録" width={"80px"} height={"40px"} fontsize={"16px"} subIcon={"/images/white_create.svg"} padding={"0"} borderradius={"8px"} />
-                  <MemoButton text="編集" width={"80px"} height={"40px"} fontsize={"16px"} subIcon={"/images/wrench.svg"} padding={"0"} borderradius={"8px"} isoutlined />
+          <Box
+            sx={{
+              px: {
+                xs: 0,
+                md: 8,
+              },
+            }}
+          >
+            <div className="flex cursor-pointer">
+              <img src={"/images/memo.svg"} alt="" />
+              メモタグ設定
+            </div>
+            <div className="flex">
+              <div>
+                <CustomColorSelect selectedValue="pink" />
+                <CustomEventSelect selectedValue="others" />
+                <div className="inline-block ml-2">
+                  <div className="flex gap-2" style={{ marginBottom: !matches ? "10px" : "", marginLeft: !matches ? "40px" : "", marginTop: !matches ? "10px" : "" }}>
+                    <MemoButton text="登録" width={"80px"} height={"40px"} fontsize={"16px"} subIcon={"/images/white_create.svg"} padding={"0"} borderradius={"8px"} />
+                    <MemoButton text="編集" width={"80px"} height={"40px"} fontsize={"16px"} subIcon={"/images/wrench.svg"} padding={"0"} borderradius={"8px"} isoutlined />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
+          </Box>
         </Grid>
       </Grid>
       {/* Custom Options */}
@@ -203,30 +224,36 @@ export default function Profile() {
           <img src={"/images/check-broken.svg"} alt="" />
           情報提供同意
         </div>
-        <div className="flex">
-          <div className="p-2">
-            <CustomOption imgSrc="/images/help.svg" title="リサーチ" widthControl />
+        <div className="flex justify-between">
+          <div style={{ padding: matches ? "16px" : "2px" }}>
+            <CustomOption imgSrc="/images/help.svg" title="リサーチ" widthControl matches={matches} />
           </div>
-          <div className="p-2">
-            <CustomOption imgSrc="/images/help.svg" title="治験" widthControl />
+          <div style={{ padding: matches ? "16px" : "2px" }}>
+            <CustomOption imgSrc="/images/help.svg" title="治験" widthControl matches={matches} />
           </div>
-          <div className="p-2">
-            <CustomOption imgSrc="/images/help.svg" title="匿名データ提供" widthControl />
+          <div style={{ padding: matches ? "16px" : "2px" }}>
+            <CustomOption imgSrc="/images/help.svg" title="匿名データ提供" widthControl matches={matches} />
           </div>
         </div>
       </Grid>
 
       {/* Color Select */}
       <Grid item md={6} xs={12}>
-        <div className="flex cursor-pointer">
-          <img src={"/images/share.svg"} alt="" />
-          SNSアカウント
-        </div>
-        <div style={{ transform: matches ? "translateX(-87px)" : "" }} >
-          <SocialInput icon="/images/X.svg" />
-          <SocialInput icon="/images/instag.svg" />
-          <SocialInput icon="/images/face.svg" />
-        </div>
+        <Box
+          sx={{
+            px: { xs: 0, md: 7, },
+          }}
+        >
+          <div className="flex cursor-pointer">
+            <img src={"/images/share.svg"} alt="" />
+            SNSアカウント
+          </div>
+          <div /* style={{ transform: matches ? "translateX(-87px)" : "" }}  */>
+            <SocialInput icon="/images/X.svg" />
+            <SocialInput icon="/images/instag.svg" />
+            <SocialInput icon="/images/face.svg" />
+          </div>
+        </Box>
       </Grid>
     </Grid>
   );

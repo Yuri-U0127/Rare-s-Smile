@@ -70,7 +70,7 @@ const layout = ({ children }) => {
             </Box>
 
             {/* Footer */}
-            {matches &&
+            {matches ?
               <Box
                 sx={{
                   backgroundColor: '#f5f5f5',
@@ -79,6 +79,8 @@ const layout = ({ children }) => {
               >
                 <PrivateFooter />
               </Box>
+              :
+              <MobileFooter />
             }
           </Grid>
         </Grid>

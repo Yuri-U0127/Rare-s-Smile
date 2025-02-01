@@ -13,9 +13,7 @@ const CustomSwitch = dynamic(() => import('../../../components/ui/CustomSwitch')
 const NoteCard = dynamic(() => import("../../../components/ui/NoteCard.jsx"));
 const CalendarSelector = dynamic(() => import("../../../components/ui/DatePicker.jsx"));
 const CustomButton = dynamic(() => import("../../../components/ui/CustomButton.jsx"));
-const AppReactDatepicker = dynamic(() => import("../../../components/ui/lib/AppReactDatepicker.jsx"));
 const CutomList = dynamic(() => import("../../../components/ui/CustomList.jsx"));
-const MemoButton = dynamic(() => import('../../../components/ui/MemoButton'));
 const SimpleButton = dynamic(() => import("../../../components/ui/SimpleButton.jsx"));
 const PageTitle = dynamic(() => import('../../../components/ui/PageTitle'));
 import CustomBreadCrumbs from "../../../components/ui/CustomBreadCrumbs.jsx";
@@ -138,7 +136,7 @@ export default function BasicTabs() {
                     </div>
                   </Grid>
                   <Grid item container md={6} xs={12}>
-                    <div className='mx-[20px]'>
+                    <div className='mx-[20px] mt-31 text-center'>
                       <div className="flex gap-2 items-center">
                         <div>登録日</div>
 
@@ -203,7 +201,7 @@ export default function BasicTabs() {
                     </div>
                   </Grid>
                   <Grid item container md={6} xs={12}>
-                    <div className='mx-[20px]'>
+                    <div className='mx-[20px] mt-3'>
                       <div className="flex gap-2 items-center">
                         <div>登録日</div>
 
