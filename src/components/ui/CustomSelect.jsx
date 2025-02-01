@@ -3,7 +3,7 @@ import React from "react";
 import { Box, MenuItem, Select, Typography } from "@mui/material";
 import Image from "next/image";
 
-const CustomSelect = ({ iconSrc, options, value, onChange }) => {
+const CustomSelect = ({ iconSrc, options, value, onChange, sm }) => {
   return (
     <Box
       display="flex"
@@ -11,7 +11,7 @@ const CustomSelect = ({ iconSrc, options, value, onChange }) => {
       boxShadow="1px 1px 3px var(--darkc)"
       borderRadius="8px"
       overflow="hidden"
-      width="80%"
+      width={sm ? "100%" : "80%"}
     >
       <Box
         display="flex"

@@ -91,22 +91,26 @@ export default function HomePage() {
               }}
             >
               <Box sx={{ /*boxShadow: "1px 1px 1px 1px black",  display: "flex" */ }} >
-                <Grid container >
-                  <Grid item xs={12} md={6} gap={3} sx={{ marginBottom: "30px", }}>
-                    <div className="flex items-center">
-                      <span className="text-[var(--darkc)] inline-block align-bottom ml-6">こんにちは、<span className=" text-3xl">ユーザー様</span></span>
-                      <img src="/images/avatar-large.png" className="!inline ml-5" alt="" width={"100px"} height={"100px"} style={{ borderRadius: "50%" }} />
-                    </div>
-                  </Grid>
-                  <Grid item xs={12} md={6} gap={3}>
-                    <br />
-                    <CustomSelect
-                      iconSrc={"/images/green_medical_info.png"}
-                      options={options}
-                      value={"zonisamide"}
-                    // onChange={handleChange}
-                    />
-                  </Grid>
+                <Grid container  >
+                  {matches &&
+                    <Grid item xs={12} md={7} sx={{ marginBottom: "30px", }}>
+                      <div className="flex items-center">
+                        <span className="text-[var(--darkc)] inline-block align-bottom ml-6">こんにちは、<span className=" text-3xl">ユーザー様</span></span>
+                        <img src="/images/avatar-large.png" className="!inline ml-5" alt="" width={"100px"} height={"100px"} style={{ borderRadius: "50%" }} />
+                      </div>
+                    </Grid>
+                  }
+                  {matches &&
+                    <Grid item xs={12} md={5} >
+                      <br />
+                      <CustomSelect
+                        iconSrc={"/images/green_medical_info.png"}
+                        options={options}
+                        value={"zonisamide"}
+                      // onChange={handleChange}
+                      />
+                    </Grid>
+                  }
                 </Grid>
                 <Grid container spacing={2}>
                   <Grid item xs={12} md={5}>
@@ -125,6 +129,18 @@ export default function HomePage() {
                       }
                     </CustomBox>
                   </Grid>
+                  {!matches &&
+                    <Grid item xs={12}>
+                      <br />
+                      <CustomSelect
+                        iconSrc={"/images/green_medical_info.png"}
+                        options={options}
+                        value={"zonisamide"}
+                        sm
+                      // onChange={handleChange}
+                      />
+                    </Grid>
+                  }
                   <Grid item xs={12} md={7}>
                     <CustomBox shadowColor="#ddd" borderRadius={"10px"}>
                       {matches ? <div className="flex">
@@ -208,8 +224,9 @@ export default function HomePage() {
                   // overflowX: 'auto',     // Enable horizontal scrolling
                   overflow: "scroll",
                   scrollbarWidth: "none",
+                  marginBottom: "20px",
                 }} >
-                  <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
+                  <Grid item md={3} xs={5} sx={{ minWidth: "250px", paddingBlock: "5px" }}>
                     <CustomGreenCard imgSrc="/images/green_circle_memo.svg" title="メモ" desc="次の受診日予定などのメモを取っておくと便利です。" />
                   </Grid>
                   <Grid item md={3} xs={5} sx={{ minWidth: "250px" }}>
