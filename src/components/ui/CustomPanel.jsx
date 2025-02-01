@@ -13,8 +13,10 @@ const CustomPanel = ({ title, margin, children }) => {
         </div>
       </div>
       <Box sx={{
-        minWidth: "368px",
+        // minWidth: "368px",
+        maxWidth: "90%",
         width: "368px",
+        marginInline: "0",
         height: "436px",
         boxShadow: `1px 1px 5px 1px #9999`,
         borderRadius: "25px",

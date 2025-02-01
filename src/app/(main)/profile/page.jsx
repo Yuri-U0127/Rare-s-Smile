@@ -13,8 +13,6 @@ const MemoButton = dynamic(() => import("../../../components/ui/MemoButton.jsx")
 const SocialInput = dynamic(() => import('../../../components/ui/SocialInput.jsx'));
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Margin } from '@mui/icons-material';
-import { match } from 'assert';
 import GoBackButton from "../../../components/ui/global/GoBackButton.jsx";
 
 export default function Profile() {

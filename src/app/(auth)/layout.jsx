@@ -6,7 +6,7 @@ const PublicHeader = dynamic(() => import('../../components/shared/Header'));
 const PublicFooter = dynamic(() => import('../../components/shared/Footer'))
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import ScrollToTopButton from '@/src/components/ui/global/ScrollToTopButton';
+import ScrollToTopButton from '../../components/ui/global/ScrollToTopButton';
 
 const layout = ({ children }) => {
 

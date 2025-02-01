@@ -6,8 +6,6 @@ import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import { Select, MenuItem } from '@mui/material';
 
-
-
 export default function CustomInput({
   imgSrc,
   imgAlt,

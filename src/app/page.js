@@ -22,7 +22,6 @@ const VerticalMenu = dynamic(() => import('../components/private/VerticalMenu'))
 
 export default function HomePage() {
 
-
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
 
@@ -49,8 +48,15 @@ export default function HomePage() {
     <div className="relative">{!matches && <MobileHeader />}
       {!matches && <ScrollToTopButton />}
       {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
-      <div className='flex'>
+      <div className='flex relative'>
         {/* {!matches && <div style={{ backgroundImage: "url('/images/sp-banner-header.png')", position: "absolute", top: 0, zIndex: "-3", width: "100vw" }} ></div>} */}
+        {!matches &&
+          <div className="flex items-center absolute top-[-6%]">
+            <img src="/images/avatar-large.png" className="!inline ml-5" alt="" width={"70px"} height={"70px"} style={{ borderRadius: "50%" }} />
+            <span className="text-[#ddd] inline-block align-bottom ml-6">こんにちは、<br /><span className=" text-3xl">ユーザー様</span></span>
+          </div>
+        }
+
         <Grid container sx={{ minHeight: '100vh' }}>
           {/* Vertical Menu */}
           {matches && <Grid

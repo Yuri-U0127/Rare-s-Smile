@@ -5,22 +5,17 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { Typography, Input } from '@mui/material';
 import { Grid } from '@mui/joy';
 const CustomBox = dynamic(() => import('../../../components/ui/CustomBox'));
 const CustomSwitch = dynamic(() => import('../../../components/ui/CustomSwitch'));
 const NoteCard = dynamic(() => import("../../../components/ui/NoteCard.jsx"));
-const CalendarSelector = dynamic(() => import("../../../components/ui/DatePicker.jsx"));
-const AppReactDatepicker = dynamic(() => import("../../../components/ui/lib/AppReactDatepicker.jsx"));
-const CutomList = dynamic(() => import("../../../components/ui/CustomList.jsx"));
 const MemoButton = dynamic(() => import('../../../components/ui/MemoButton'));
-const SimpleButton = dynamic(() => import("../../../components/ui/SimpleButton.jsx"));
 const CustomPanel = dynamic(() => import('../../../components/ui/CustomPanel'));
 const EmptyField = dynamic(() => import('../../../components/ui/EmptyField'));
 const CustomButton = dynamic(() => import("../../../components/ui/CustomButton.jsx"));
 const PageTitle = dynamic(() => import('../../../components/ui/PageTitle'));
 import CustomBreadCrumbs from "../../../components/ui/CustomBreadCrumbs.jsx";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CustomCarousel from "../../../components/ui/CustomCarousel.jsx";
@@ -116,10 +111,13 @@ export default function BasicTabs() {
     <>
       {matches && <CustomBreadCrumbs hierarchy={2} label1={"証明書"} url={""} label={currentLabel} />}
       <div className='mr-0 mt-5'>
-        <div className='flex justify-end gap-[271px]'>
+        {matches ? <div className='flex justify-end gap-[271px]'>
           <PageTitle title={"証明書登録"} />
           <MemoButton text="登録データ一覧" width={"193px"} height={"38px"} fontsize={"16px"} padding={"0"} borderradius={"8px"} />
         </div>
+          :
+          <PageTitle title={"証明書登録"} />
+        }
       </div>
       <div className='mt-5'>
         <Box sx={{ width: '100%' }}>
