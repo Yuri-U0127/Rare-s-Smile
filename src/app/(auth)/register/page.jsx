@@ -20,7 +20,7 @@ export default function RegisterPage() {
   return (
     <>
       {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
-      <div className='shadow-xl w-[80%] mx-auto p-20 mt-[136px]  rounded-lg mb-[56px]'>
+      <div className='shadow-xl w-full mx-auto p-20 mt-[136px]  rounded-lg mb-[56px]' style={{ maxWidth: "800px" }}>
         <div className="flex text-center">
           <img src="/images/create_account.svg" className="mx-auto" />
         </div>
@@ -45,7 +45,7 @@ export default function RegisterPage() {
         </div>
         <LoginButton />
       </div >
-      <div className='shadow-xl w-[80%] mx-auto p-20 mt-[136px] rounded-lg  mb-[56px]'>
+      <div className='shadow-xl w-full mx-auto p-20 mt-[136px] rounded-lg  mb-[56px]' style={{ maxWidth: "800px" }}>
         <ForStranger />
       </div>
     </>

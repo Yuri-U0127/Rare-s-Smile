@@ -24,12 +24,12 @@ export default function LoginPage() {
   return (
     <>
       {!matches && <img src="/images/sp-banner-header.png" width="100%" />}
-      <div className='shadow-xl w-[80%] mx-auto p-20 mt-[136px]  rounded-lg mb-[56px]'>
+      <div className='shadow-xl w-full mx-auto p-20 mt-[136px]  rounded-lg mb-[56px]' style={{ maxWidth: "800px" }}>
         <div className="flex text-center">
           <img src="/images/login.svg" className="mx-auto" />
         </div>
         <div className="text-[#2ABFB0] text-[32px] text-center mt-[64px]">メールアドレスでログイン</div>
-        <div className='w-[600px] mx-auto'>
+        <div className='mx-auto' style={{ maxWidth: "600px" }}>
           <CustomInput imgSrc={"/images/email.svg"} imgAlt={"Email Icon"} inputPlaceholder={"例) sample@gmail.com "} inputLab={"メールアドレス"} />
           <CustomInput imgSrc={"/images/password.svg"} imgAlt={"Password Icon"} inputPlaceholder={"8文字以上の英数字"} inputLab={"パスワード"} />
           <FormControl >
@@ -42,7 +42,7 @@ export default function LoginPage() {
           <LoginButton />
         </div>
       </div>
-      <div className='shadow-xl w-[80%] mx-auto p-20 mt-[136px] rounded-lg  mb-[56px]'>
+      <div className='shadow-xl w-full mx-auto p-20 mt-[136px] rounded-lg  mb-[56px]' style={{ maxWidth: "800px" }}>
         <ForStranger />
       </div>
       <ConfirmModal modalOpen={isModalOpen} onModalClose={() => setIsModalOpen(false)} />
