@@ -20,71 +20,70 @@ const layout = ({ children }) => {
   const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <html lang="jp" /* style={{ fontFamily: notoSansJP.className }} */>
-      <body className="flex is-full min-bs-full flex-auto flex-col bg-white">
-        {!matches && <ScrollToTopButton />}
-        <div className='flex'>
-          <Grid container sx={{ minHeight: '100vh' }}>
-            {/* Vertical Menu */}
-            {matches ?
-              <Grid
-                item
-                xs={2}
-                sx={{
-                  backgroundImage: 'linear-gradient(135deg, #B7DDD8, #05999E)',
-                  paddingLeft: 2,
-                }}
-              >
-                <VerticalMenu />
-              </Grid>
-              :
-              <MobileHeader />
-            }
 
-            {/* Main Content Area */}
+    <div className="flex is-full min-bs-full flex-auto flex-col bg-white">
+      {!matches && <ScrollToTopButton />}
+      <div className='flex'>
+        <Grid container sx={{ minHeight: '100vh' }}>
+          {/* Vertical Menu */}
+          {matches ?
             <Grid
               item
-              xs={matches ? 10 : 12}
+              xs={2}
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
+                backgroundImage: 'linear-gradient(135deg, #B7DDD8, #05999E)',
+                paddingLeft: 2,
               }}
             >
-              {/* Header */}
-              {matches &&
-                <Box>
-                  <PrivateHeader />
-                </Box>
-              }
-              {/* Content */}
+              <VerticalMenu />
+            </Grid>
+            :
+            <MobileHeader />
+          }
+
+          {/* Main Content Area */}
+          <Grid
+            item
+            xs={matches ? 10 : 12}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            {/* Header */}
+            {matches &&
+              <Box>
+                <PrivateHeader />
+              </Box>
+            }
+            {/* Content */}
+            <Box
+              sx={{
+                flex: 1,
+                padding: 3,
+                backgroundColor: '#ffffff',
+
+              }}
+            >
+              {/* {matches ? <br style={{ lineHeight: "3" }} /> : ""} */}
+              {children}
+            </Box>
+
+            {/* Footer */}
+            {matches &&
               <Box
                 sx={{
-                  flex: 1,
-                  padding: 3,
-                  backgroundColor: '#ffffff',
-
+                  backgroundColor: '#f5f5f5',
+                  padding: 2,
                 }}
               >
-                {/* {matches ? <br style={{ lineHeight: "3" }} /> : ""} */}
-                {children}
+                <PrivateFooter />
               </Box>
-
-              {/* Footer */}
-              {matches &&
-                <Box
-                  sx={{
-                    backgroundColor: '#f5f5f5',
-                    padding: 2,
-                  }}
-                >
-                  <PrivateFooter />
-                </Box>
-              }
-            </Grid>
+            }
           </Grid>
-        </div>
-      </body>
-    </html>
+        </Grid>
+      </div>
+    </div>
   );
 };
 

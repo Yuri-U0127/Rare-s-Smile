@@ -36,7 +36,7 @@ const SocialInput = ({ icon, placeholder }) => {
           padding: 0
         }}
       >
-        <Image src={icon} alt="" width={30} height={30} />
+        <Image src={icon} alt="" width={30} height={30} sx={{ aspectRatio: "1" }} />
       </Button>
       <Input
         // variant="outlined"

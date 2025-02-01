@@ -42,29 +42,50 @@ export default function Profile() {
           </div>
         </div>
       </Grid>
-      <Grid item md={6} xs={12}>
-        <div className='px-10'>
-
-          <div className='p-6 ml-6 mt-4'>
-            累計金額開始日
-            <CustomButton
-              text={<span><span className='text-xl'>2021</span>年<span className='text-xl'>03</span>月<span className='text-xl'>05</span>日</span>}
-              // onClick={ }
-              // startIcon={ }
-              // subIcon={ }
-              width={"228px"}
-              height={"50px"}
-              // isoutlined={ }
-              borderradius={"8px"}
-              display={"block"}
-            // fontsize={ }
-            />
+      {matches ?
+        <Grid item md={6} xs={12}>
+          <div className='px-10'>
+            <div className='p-6 ml-6 mt-4'>
+              累計金額開始日
+              <CustomButton
+                text={<span><span className='text-xl'>2021</span>年<span className='text-xl'>03</span>月<span className='text-xl'>05</span>日</span>}
+                // onClick={ }
+                // startIcon={ }
+                // subIcon={ }
+                width={"228px"}
+                height={"50px"}
+                // isoutlined={ }
+                borderradius={"8px"}
+                display={"block"}
+              // fontsize={ }
+              />
+            </div>
           </div>
-        </div>
-      </Grid>
+        </Grid>
+        :
+        <>
+          <div></div>
+          <div className="max-h-[325px] w-[150px] absolute">
+            <div className="h-[50px] border-b-2 border-[white] bg-[#22998D] rounded-t-[10px] text-white">
+              <div className="w-fit mx-auto">累計開始日</div>
+            </div>
+            <div className="bg-[#D4F2EF] rounded-b-[10px]">
+              <div className="w-fit mx-auto pb-10 text-[#22998D]"><span className="text-3xl font-bold">2025<br />01/05</span></div>
+            </div>
+          </div>
+        </>
+      }
       <Grid container >
-
-
+        {!matches &&
+          <Grid item md={6} xs={12}>
+            <div className='px-10 relative'>
+              <div className="flex w-[100px] h-[100px] relative ml-12">
+                <img src="/images/avatar-large.png" alt="" className='rounded-[50%]' />
+                <img src="/images/add_photo.svg" alt="" className='absolute right-[-20px] cursor-pointer' />
+              </div>
+            </div>
+          </Grid>
+        }
         {/* Custom Inputs */}
         <Grid item md={6} xs={12}>
           <CustomInput
@@ -80,14 +101,16 @@ export default function Profile() {
             inputLab="メールアドレス"
           />
         </Grid>
-        <Grid item md={6} xs={12}>
-          <div className='px-10'>
-            <div className="flex w-[160px] h-[160px] relative ml-12">
-              <img src="/images/avatar-large.png" alt="" className='rounded-[50%]' />
-              <img src="/images/add_photo.svg" alt="" className='absolute right-[-20px] cursor-pointer' />
+        {matches &&
+          <Grid item md={6} xs={12}>
+            <div className='px-10'>
+              <div className="flex w-[160px] h-[160px] relative ml-12">
+                <img src="/images/avatar-large.png" alt="" className='rounded-[50%]' />
+                <img src="/images/add_photo.svg" alt="" className='absolute right-[-20px] cursor-pointer' />
+              </div>
             </div>
-          </div>
-        </Grid>
+          </Grid>
+        }
       </Grid>
       <Grid container>
         <Grid item md={6} xs={12}>

@@ -23,7 +23,7 @@ export default function CustomInput({
   const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,]
 
   return (
-    <div className="flex flex-row items-center w-full">
+    <div className="w-full">
       <FormControl >
         <FormLabel sx={{ color: "inherit" }}>
           <div className="flex">

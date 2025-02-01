@@ -210,6 +210,16 @@ export default function BasicTabs() {
                     <CustomCarousel number={3} carouselIndex={carouselIndex} setCarouselIndex={setCarouselIndex} />
                   }
                   <Grid item xs={12} md={3}>
+                    <div className="block md:hidden mt-5">
+                      <CustomButton
+                        text="登録 +"
+                        width={"239px"}
+                        height={"64px"}
+                        borderradius={"150px"}
+                        display={"block"}
+                        sx={{ marginInline: "auto", marginBottom: "20px" }}
+                      />
+                    </div>
                     <div className='mt-10'>
                       <div className="flex gap-2 items-center p-0 text-[#aaa] justify-end mr-6">
                         <img src="/images/pin.svg" alt="" />
@@ -243,14 +253,16 @@ export default function BasicTabs() {
                           </div>
                         }
                       </div>
-                      <CustomButton
-                        text="登録 +"
-                        width={"239px"}
-                        height={"64px"}
-                        borderradius={"150px"}
-                        display={"block"}
-                        sx={{ marginInline: { md: "5px 0px", sm: "auto" }, marginTop: "50px", marginButtom: "40px" }}
-                      />
+                      <div className="hidden md:block">
+                        <CustomButton
+                          text="登録 +"
+                          width={"239px"}
+                          height={"64px"}
+                          borderradius={"150px"}
+                          display={"block"}
+                          sx={{ marginInline: { md: "5px 0px", sm: "auto" }, marginTop: "50px", marginButtom: "40px" }}
+                        />
+                      </div>
                     </div>
                   </Grid>
                 </Grid>

@@ -22,7 +22,7 @@ const StyledButton = styled(Button)(({ width, height, isoutlined, borderradius, 
   boxShadow: "1px 1px 10px  #aaaaaa",
   "&:hover": {
     boxShadow: isoutlined ? "3px 3px 10px #22998D" : "1px 1px 10px  #aaaaaa",
-    backgroundColor: !isoutlined ? "#46D0C9" : "inherit",
+    backgroundColor: isoutlined ? "inherit" : "#46D0C9",
 
   },
 }));
