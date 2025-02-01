@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import CustomMobileMenuList from "../ui/CustomMobileMenuList.jsx";
 import CustomMobileMenuDivider from "../ui/CustomMobileMenuDivider.jsx";
+import Link from "next/link.js";
 
 const MobileHeader = () => {
   const [open, setOpen] = useState(false);
@@ -36,13 +37,15 @@ const MobileHeader = () => {
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <IconButton edge="start">
-            <img
-              src="/images/logo_small.svg"
-              alt="Logo"
-              style={{ width: 40, height: 40 }}
-            />
-          </IconButton>
+          <Link href='/'>
+            <IconButton edge="start">
+              <img
+                src="/images/logo_small.svg"
+                alt="Logo"
+                style={{ width: 40, height: 40 }}
+              />
+            </IconButton>
+          </Link>
           <Box
             sx={{
               display: "flex",
