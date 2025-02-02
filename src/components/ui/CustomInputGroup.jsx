@@ -1,5 +1,4 @@
 import { FormControl, FormLabel, Input, Select, MenuItem, Box } from "@mui/material";
-import TextField from "@mui/material/TextField";
 
 export default function InputGroup({ inputLab, inputPlaceholder, imgSrc, extraButton,
   btnLabel,

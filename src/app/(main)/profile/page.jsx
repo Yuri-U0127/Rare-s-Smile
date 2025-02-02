@@ -35,14 +35,15 @@ export default function Profile() {
             <Typography variant="h4" component="h2" sx={{ color: "var(--darkc)", fontFamily: "M PLUS Rounded 1c" }}>
               プロフィール
             </Typography>
-            <div className="flex">
+            {matches && <div className="flex">
               <img src="/images/edit.svg" alt="" className="h-6" style={{ margin: matches ? '0' : "inherit" }} />
               編集する
             </div>
+            }
           </div>
         </div>
       </Grid>
-      {matches ?
+      {matches &&
         <Grid item md={6} xs={12}>
           <div className='px-10'>
             <div className='p-6 ml-6 mt-4'>
@@ -62,26 +63,42 @@ export default function Profile() {
             </div>
           </div>
         </Grid>
-        :
-        <>
-          <div></div>
-          <div className="max-h-[325px] w-[150px] absolute">
-            <div className="h-[50px] border-b-2 border-[white] bg-[#22998D] rounded-t-[10px] text-white">
-              <div className="w-fit mx-auto">累計開始日</div>
+
+      }
+      {!matches &&
+        <Grid item xs={12}>
+          <div className='mt-12 relative border-gray-600 rounded-md mb-6' style={{ borderWidth: "1px 0 0 0" }}>
+            <div className="max-h-[225px] w-[130px]">
+              <div className="flex h-[40px] border-b-2 border-[white] bg-[#22998D] rounded-t-[10px] text-white p-2">
+                <img src="images/white_calendar.svg" alt="" />
+                <div className="w-fit mx-auto">累計開始日</div>
+              </div>
+              <div className="bg-[#D4F2EF] rounded-b-[20px]">
+                <div className="w-fit mx-auto pb-2 text-[#22998D]"><span className="text-xl font-bold">2025<br />01/05</span></div>
+              </div>
             </div>
-            <div className="bg-[#D4F2EF] rounded-b-[10px]">
-              <div className="w-fit mx-auto pb-10 text-[#22998D]"><span className="text-3xl font-bold">2025<br />01/05</span></div>
+
+            <div className='absolute top-[-50%] right-1/2' style={{ transform: "translateX(50%)" }}>
+              <div className='px-10 relative'>
+                <div className="flex w-[100px] h-[100px] relative">
+                  <img src="/images/avatar-large.png" alt="" className='rounded-[50%]' />
+                  <img src="/images/add_photo.svg" alt="" className='absolute right-[-20px] cursor-pointer' />
+                </div>
+              </div>
             </div>
+
           </div>
-        </>
+        </Grid>
       }
       <Grid container >
         {!matches &&
-          <Grid item md={6} xs={12}>
-            <div className='px-10 relative'>
-              <div className="flex w-[100px] h-[100px] relative ml-12">
-                <img src="/images/avatar-large.png" alt="" className='rounded-[50%]' />
-                <img src="/images/add_photo.svg" alt="" className='absolute right-[-20px] cursor-pointer' />
+          <Grid item xs={12}>
+            <div className="flex cursor-pointer justify-end">
+              <div>
+                <div className="flex">
+                  <img src="/images/edit.svg" alt="" className="h-6" style={{ margin: matches ? '0' : "inherit" }} />
+                  編集
+                </div>
               </div>
             </div>
           </Grid>
